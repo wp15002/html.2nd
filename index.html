@@ -57,7 +57,8 @@ nav ul	{
 	margin-left: 0;
 	padding-left: 0;
 	height: 30px;
-	background-color: #005087;
+	background-color: #333333;
+	border-radius: 5px;
 }
 
 nav ul li	{
@@ -72,11 +73,14 @@ nav ul li a	{
 	text-decoration: none;
 	text-align: center;
 	color: #ffffff;
-	background-color: #005087;
 	border-right: solid 1px #ffffff;
 }
 
 nav ul li a:hover	{background-color: #017acd}
+
+nav ul li:first-of-type a:hover{
+	border-radius: 5px 0 0 5px;
+}
 
 /* コンテンツ */
 article	{
@@ -85,18 +89,38 @@ article	{
 	margin-right: auto;
 }
 
+article header{
+	border: solid 1px #aaaaaa;
+	margin: 20px 0 10px;
+	padding: 18px;
+	border-radius: 5px;
+}
+
 article header h1	{
 	background: none;
 	font-size: 28px;
 	color: #000000;
 	line-height: 45px;
 	padding-left: 0;
-	margin-bottom: 0;
+	margin: 0;
 	font-weight: normal;
+	float: left;
+}
+
+article header p{
+	font-size: 16px;
+	color: #444444;
+	margin-left: 300px;
 }
 
 article section{
 	clear: both;
+	border: solid 1px #aaaaaa;
+	margin: 20px 0 10px;
+	padding: 18px;
+	border-radius: 5px;
+	overflow: hidden;
+	background: -webkit-linear-gradient(#ffffff 0%,#dfdfdf 100%);
 }
 
 article section h1	{
@@ -105,7 +129,7 @@ article section h1	{
 	font-weight: normal;
 	line-height: 22px;
 	padding-left: 0;
-	margin-top: 30px;
+	margin-top: 0;
 	margin-bottom: 20px;
 	margin-left: 0;
 	margin-right: 0;
@@ -115,8 +139,8 @@ article p	{
 	font-size: 0.75em;
 	line-height: 1.6;
 	margin-top: 10px;
-	margin-left: 12px;
-	margin-right: 12px;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 /* フッター */
@@ -145,13 +169,13 @@ figure{
 article section:nth-of-type(odd) figure	{
 	float: right;
 	margin-left: 15px;
-	margin-bottom: 15px;
+	margin-bottom: 0;
 }
 
 article section:nth-of-type(even) figure{
 	float: left;
 	margin-right: 15px;
-	margin-bottom: 15px;
+	margin-bottom: 0;
 }
 
 article section figcaption{
@@ -202,11 +226,11 @@ article section figure {
 
 </header>
 <!-- コンテンツ -->
-<article item scope itemtype="http://schema.org/Article">
+<article itemscope itemtype="http://schema.org/Article">
 	<header id="postheader">
 		<h1 itemprop="name">森の工房について</h1>
 		
-		<p id="summary">Forest Studioでは、自然の中にある「森の工房」を運営しています。森の工房では、四季を通してイベントを開催したり、さまざまな商品の開発を行っています。</p>
+		<p id="summary" itemprop="description">Forest Studioでは、自然の中にある「森の工房」を運営しています。森の工房では、四季を通してイベントを開催したり、さまざまな商品の開発を行っています。</p>
 	</header>
 	
 	<div itemprop="articleBody">
