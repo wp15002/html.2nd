@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>森の工房 [Forest Studio] - 森の工房について</title>
+<title>森の工房について</title>
 <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
 
 <style>
@@ -30,6 +30,7 @@ div#container	{
 	background-position: 15px 420px, 90px 500px;
 	background-size: 94px 94px, 30px 30px;
 	position:relative;
+	overflow: hidden;
 }
 
 /* ヘッダー */
@@ -204,6 +205,11 @@ small::before{
 	position:  absolute;
 	right: 0;
 	bottom: 0;
+	-webkit-transform:rotate(-45deg) translate(62px,20px);
+	-moz-transform:rotate(-45deg) translate(62px,20px);
+	-o-transform:rotate(-45deg) translate(62px,20px);
+	-ms-transform:rotate(-45deg) translate(62px,20px);
+
 }
 
 /* 画像の配置 */
@@ -232,6 +238,49 @@ article section figcaption{
 article section:nth-of-type(odd) figcaption{
 	text-align: right;
 }
+
+/* ３段組み */
+article div[itemprop="articleBody"]{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-box;
+}
+
+article section{
+	width: 288px;
+	margin-right: 18px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	overflow: visible;
+}
+
+article section h1{
+	height: 48px;
+	line-height: 1.2;
+}
+
+article section:nth-of-type(1n) figure{
+	float: none;
+	margin: 0;
+}
+
+article section:nth-of-type(1n) figcaption{
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+/* ３段組み IE8~9 & Opera */
+article section{
+	clear: none;
+	float: left;
+	position: relative;
+}
+
+article section+section+section{
+	margin-right: 0;
+}
+
 
 </style>
 <!--[if li IE 9]>
@@ -273,6 +322,20 @@ article section{
 </style>
 
 <![endif]-->
+
+<!--[if lt IE8]>
+<style>
+
+article section{
+	width: 250px;
+}
+
+article section figure{
+	margin-left:0
+}
+</style>
+
+<![endif]-->
 </head>
 <body>
 
@@ -290,7 +353,7 @@ article section{
 	<li><a href="index.html">トップ</a></li>
 	<li><a href="about.html">森の工房について</a></li>
 	<li><a href="event.html">季節のイベント</a></li>
-	<li><a href="contact.html">お問い合わせ</a></li>
+	<li><a href="http://wp15002.github.io/html.4th/">お問い合わせ</a></li>
 	<li><a href="http://blog.xxx.xxx/">ブログ</a></li>
 	</ul>
 </nav>
