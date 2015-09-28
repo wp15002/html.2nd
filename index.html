@@ -477,9 +477,18 @@ article section figure{
 
 <script>
 	function myimage(){
-		var canvas=document.getElementById('sircle');
-		var ctx
+		var canvas = document.getElementById('circle');
 
+		if(canvas.getContext){
+
+		var ctx =canvas.getContext('2d');
+
+		ctx.arc(14,14,14,0,Math.PI*2,true);
+		ctx.fillStyle="#"+Math.floor(Math.random()
+			*256*256*256).toString(16);
+		ctx.fill();
+
+        }
 	}
 
 </script>
